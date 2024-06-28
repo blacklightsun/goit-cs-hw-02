@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  python-app:
+    image: blacklightsun888/hw-02
+    ports:
+      - 80:8000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: rest_app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 567234
+    ports:
+      - "5432:5432"
+
